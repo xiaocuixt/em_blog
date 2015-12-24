@@ -1,22 +1,22 @@
-<div class="container">
-  <table class="table table-bordered">
-    <thead>
+{{#link-to "posts.new" class="btn btn-primary"}}新建{{/link-to}}
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="text-center">标题</th>
+      <th class="text-center">内容</th>
+      <th class="text-center" colspan="3">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |post| }}
       <tr>
-        <th class="text-center">标题</th>
-        <th class="text-center">内容</th>
-        <th class="text-center" colspan="3">操作</th>
+        <td class="text-center">{{ post.title }}</td>
+        <td class="text-center">{{ post.content }}</td>
+        <td class="text-center">{{#link-to "posts.show" post}}查看{{/link-to}}</td>
+        <td class="text-center">编辑</td>
+        <td class="text-center">删除</td>
       </tr>
-    </thead>
-    <tbody>
-      {{#each model as |post| }}
-        <tr>
-          <td class="text-center">{{ post.title }}</td>
-          <td class="text-center">{{ post.content }}</td>
-          <td class="text-center">查看</td>
-          <td class="text-center">编辑</td>
-          <td class="text-center">删除</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</div>
+    {{/each}}
+  </tbody>
+</table>
