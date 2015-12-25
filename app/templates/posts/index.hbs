@@ -14,8 +14,8 @@
         <td class="text-center">{{ post.title }}</td>
         <td class="text-center">{{ post.content }}</td>
         <td class="text-center">{{#link-to "posts.show" post}}查看{{/link-to}}</td>
-        <td class="text-center">编辑</td>
-        <td class="text-center">删除</td>
+        <td class="text-center">{{#link-to "posts.edit" post}}修改{{/link-to}}</td>
+        <td class="text-center"><a href="#" {{ action "delete" post}}>删除</a></td>
       </tr>
     {{/each}}
   </tbody>
