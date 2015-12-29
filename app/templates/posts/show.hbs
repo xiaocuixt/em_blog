@@ -8,3 +8,12 @@
     <td>{{model.content}}</td>
   </tr>
 </table>
+
+{{! 评论内容 }}
+{{ afterModel(model) }}
+{{#each model.comments as |comment|}}
+  <li>
+    <p>{{comment.email}}</p>
+    {{comment.content}}
+  </li>
+{{/each}}
