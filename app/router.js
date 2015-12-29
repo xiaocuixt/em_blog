@@ -11,8 +11,10 @@ Router.map(function() {
 
     this.route('show', {
       path: ':post_id'
+    }, function() {
+      this.route('articles', {resetNamespace: true}, function(){
+      });
     });
-
     this.route('edit', {
       path: ':post_id/edit'
     });
